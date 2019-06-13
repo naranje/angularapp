@@ -1,3 +1,13 @@
-<p>
-  random works!
-</p>
+<div class="customers view indent">
+  <div class="container">
+      <header>
+          <h3>
+              {{ title }}
+          </h3>
+      </header>
+      <br />
+      <div *ngIf = "clue">
+        <app-random-clue [clue]="clue"></app-random-clue>
+      </div>
+  </div>
+</div>

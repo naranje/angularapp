@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { RandomComponent } from './random.component';
+import { RandomClueComponent } from './random-clue/random-clue.component';
 
 const routes: Routes = [
   {path: '', component: RandomComponent}
@@ -13,5 +14,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class RandomRoutingModule { 
-  static components = [RandomComponent];
+  static components = [RandomComponent, RandomClueComponent];
 }
