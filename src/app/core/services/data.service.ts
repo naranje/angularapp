@@ -32,6 +32,13 @@ export class DataService {
     ); 
   }
 
+  getRandomClue() : Observable<IClue>{
+    return this.http.get<IClue[]>(this.randomBaseUrl)
+    .pipe(
+      map(clues => {return clues[0];}), catchError(this.handleError)
+    );
+  }
+
   private handleError(error: HttpErrorResponse){
     console.error('server error:', error);
     if (error.error instanceof Error){
