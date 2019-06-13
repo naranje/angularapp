@@ -10,10 +10,12 @@ import { DataService } from '../core/services/data.service';
 })
 export class CluesComponent implements OnInit {
 
+  title: String;
   clues: IClue[] = [];
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
+    this.title = "Clues";
     this.getClues();
   }
   
