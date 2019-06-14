@@ -5,6 +5,8 @@ import { map, catchError } from 'rxjs/operators';
 
 import { ICustomer } from '../../shared/interfaces/icustomer';
 import { IClue } from '../../shared/interfaces/iclue';
+import { IPagedResults } from 'src/app/shared/interfaces/ipaged-results';
+import { ICategory } from 'src/app/shared/interfaces/icategory';
 
 @Injectable()
 export class DataService {
@@ -36,6 +38,21 @@ export class DataService {
     return this.http.get<IClue[]>(this.randomBaseUrl)
     .pipe(
       map(clues => {return clues[0];}), catchError(this.handleError)
+    );
+  }
+
+  getCategoriesPage(page: number, pageSize: number): Observable<IPagedResults<ICategory[]>> {
+    return this.http.get<ICategory[]>(`${this.categoriesBaseUrl}??count=${pageSize}&offset=${page*pageSize}`,{observe: 'response'})
+      .pipe(
+        map(res => {
+          const totalRecords = +res.headers.get('X-InlineCount');
+          const categories = res.body as ICategory[];
+          return {
+            results: categories,
+            totalRecords: totalRecords
+          };
+        }),
+        catchError(this.handleError)
     );
   }
 
