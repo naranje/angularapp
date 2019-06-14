@@ -8,13 +8,11 @@
         </header>
         <br />
         
+        <app-paging
+            (pageChanged)="pageChanged($event)"></app-paging>     
+            
         <app-categories-grid 
           [categories]="filteredCategories"></app-categories-grid>
-
-        <!-- <cm-pagination
-            [totalItems]="totalRecords" 
-            [pageSize]="pageSize" 
-            (pageChanged)="pageChanged($event)"></cm-pagination> -->
-          
+    
     </div>
 </div>

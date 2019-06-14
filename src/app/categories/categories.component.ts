@@ -16,7 +16,7 @@ export class CategoriesComponent implements OnInit {
   categories: ICategory[] = [];
   filteredCategories: ICategory[] = [];
   totalRecords = 0;
-  pageSize = 100;
+  pageSize = 15;
 
   constructor(private dataService: DataService,
     private filterService: FilterService) { }
@@ -29,7 +29,7 @@ export class CategoriesComponent implements OnInit {
   }
 
   getCategoriesPage(page: number){
-    this.dataService.getCategoriesPage(1, this.pageSize)
+    this.dataService.getCategoriesPage(page, this.pageSize)
     .subscribe((response: IPagedResults<ICategory[]>) => {
       this.categories = this.filteredCategories = response.results;
       this.totalRecords = response.totalRecords;
@@ -42,7 +42,7 @@ export class CategoriesComponent implements OnInit {
   }
 
   pageChanged(page: number){
-
+    this.getCategoriesPage(page);
   }
 
   filterChanged(data: string){
