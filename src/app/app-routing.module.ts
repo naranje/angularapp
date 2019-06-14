@@ -6,6 +6,7 @@ const routes: Routes = [
   // {path: 'customers', loadChildren: './customers/customers.module#CustomersModule' },
   {path: 'random', loadChildren: './random/random.module#RandomModule' },
   {path: 'categories', loadChildren: './categories/categories.module#CategoriesModule' },
+  {path: 'category/:id', loadChildren: './category/category.module#CategoryModule' },
   {path: 'clues', loadChildren: './clues/clues.module#CluesModule' },
   {path: '**', pathMatch: 'full', redirectTo: '/random'} //catch all unfound routes and redirect to home page
 ];

@@ -20,7 +20,11 @@ export class CluesComponent implements OnInit {
   }
   
   getClues(){
-    this.dataService.getClues().subscribe(
+    //TODO: Get these from the form
+    let minDate = "2014-02-01";
+    let maxDate = "2014-02-03";
+    
+    this.dataService.getClues(minDate, maxDate).subscribe(
       (response: IClue[]) => {
         this.clues = response;
       },

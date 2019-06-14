@@ -12,8 +12,7 @@ import { ICategory } from 'src/app/shared/interfaces/icategory';
 export class DataService {
 
   customerBaseUrl = 'https://472bae54-459b-42e4-b644-e5dd57c9ee01.mock.pstmn.io/api/customers';
-  // cluesBaseUrl = 'http://jservice.io/api/clues?';
-  cluesBaseUrl = 'http://jservice.io/api/clues?min_date="2014-02-01"&max_date="2014-02-03"';
+  cluesBaseUrl = 'http://jservice.io/api/clues';
   randomBaseUrl = 'http://jservice.io/api/random';
   categoriesBaseUrl = 'http://jservice.io/api/categories';
 
@@ -26,9 +25,8 @@ export class DataService {
       );
   }
 
-  //TODO: Pass dates as parameters
-  getClues() : Observable<IClue[]>{
-    return this.http.get<IClue[]>(this.cluesBaseUrl)
+  getClues(minDate: string, maxDate: string) : Observable<IClue[]>{
+    return this.http.get<IClue[]>(`${this.cluesBaseUrl}?min_date="${minDate}"&max_date="${maxDate}"`)
     .pipe(
       map(clues => {return clues;}), catchError(this.handleError)
     ); 
@@ -45,6 +43,7 @@ export class DataService {
     return this.http.get<ICategory[]>(`${this.categoriesBaseUrl}?count=${pageSize}&offset=${page*pageSize}`, {observe: 'response'})
       .pipe(
         map(res => {
+          //TODO: Remove this
           const totalRecords = +res.headers.get('X-InlineCount');
           const categories = res.body as ICategory[];
           return {
@@ -54,6 +53,11 @@ export class DataService {
         }),
         catchError(this.handleError)
     );
+  }
+
+  getCategoryClues(categoryId: number) {
+    return this.http.get<IClue[]>(`${this.cluesBaseUrl}?category=${categoryId}`)
+    .pipe(map(clues => {return clues;}), catchError(this.handleError));
   }
 
   private handleError(error: HttpErrorResponse){

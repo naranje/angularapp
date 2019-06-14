@@ -19,6 +19,7 @@
                           <td>{{ category.created_at }}</td>
                           <td>{{ category.updated_at}}</td>
                           <td>{{ category.clues_count}}</td>
+                          <td><a [routerLink]="['/category',category.id]">Clues</a></td>
                       </tr>
                       <tr *ngIf="!categories.length">
                           <td>&nbsp;</td>

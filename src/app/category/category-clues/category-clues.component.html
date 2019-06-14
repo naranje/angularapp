@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row grid-container">
+      <div class="col-md-10">
+          <div class="table">
+              <table class="table table-striped table-hover">
+                  <thead>
+                      <tr>
+                          <th>Id</th>
+                          <th>Answer</th>
+                          <th>Question</th>
+                          <th>Value</th>
+                          <th>Airdate</th>
+                          <th>Category</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let clue of clues">
+                          <td>{{ clue.id}}</td>
+                          <td>{{ clue.answer}}</td>
+                          <td>{{ clue.question }}</td>
+                          <td>{{ clue.value}}</td>
+                          <td>{{ clue.airdate}}</td>
+                          <td>{{ clue.category.title }}</td>
+                      </tr>
+                      <tr *ngIf="!clues.length">
+                          <td>&nbsp;</td>
+                          <td colspan="7">No Records Found</td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+</div>
