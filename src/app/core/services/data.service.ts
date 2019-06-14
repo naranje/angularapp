@@ -42,7 +42,7 @@ export class DataService {
   }
 
   getCategoriesPage(page: number, pageSize: number): Observable<IPagedResults<ICategory[]>> {
-    return this.http.get<ICategory[]>(`${this.categoriesBaseUrl}??count=${pageSize}&offset=${page*pageSize}`,{observe: 'response'})
+    return this.http.get<ICategory[]>(`${this.categoriesBaseUrl}?count=${pageSize}&offset=${page*pageSize}`, {observe: 'response'})
       .pipe(
         map(res => {
           const totalRecords = +res.headers.get('X-InlineCount');

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ICategory } from '../shared/interfaces/icategory';
 import { DataService } from '../core/services/data.service';
 import { FilterService } from '../core/services/filter.service';
+import { IPagedResults } from '../shared/interfaces/ipaged-results';
 
 @Component({
   selector: 'app-categories',
@@ -13,6 +14,7 @@ export class CategoriesComponent implements OnInit {
   title: string;
   filterText: string;
   categories: ICategory[] = [];
+  filteredCategories: ICategory[] = [];
   totalRecords = 0;
   pageSize = 100;
 
@@ -27,7 +29,16 @@ export class CategoriesComponent implements OnInit {
   }
 
   getCategoriesPage(page: number){
-    
+    this.dataService.getCategoriesPage(1, this.pageSize)
+    .subscribe((response: IPagedResults<ICategory[]>) => {
+      this.categories = this.filteredCategories = response.results;
+      this.totalRecords = response.totalRecords;
+    },(error: any) => {
+      //TODO: Add logging service
+      console.error(error);
+    },
+    () => {console.log('Retrieved categories for page: ' + page);}
+    )
   }
 
   pageChanged(page: number){

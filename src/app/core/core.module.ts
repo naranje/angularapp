@@ -6,11 +6,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './services/data.service';
 import { EnsureModuleLoadedOnceGuard } from './ensure-module-loaded-once.guard';
 import { NavbarComponent } from './navbar/navbar.component';
+import { FilterService } from './services/filter.service';
 
 @NgModule({
   imports: [CommonModule, RouterModule, HttpClientModule],
   exports: [RouterModule, HttpClientModule, NavbarComponent],
-  providers: [DataService],
+  providers: [DataService, FilterService],
   declarations: [NavbarComponent]
 })
 
