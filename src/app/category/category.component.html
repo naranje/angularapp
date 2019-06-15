@@ -7,6 +7,7 @@
           </h3>
       </header>
       <br />
-      <app-category-clues [clues]="clues"></app-category-clues>
+      <app-filter class="navbar-right" (changed)="filterChanged($event)"></app-filter>
+      <app-category-clues [clues]="filteredClues"></app-category-clues>
   </div>
 </div>

@@ -29,6 +29,7 @@
                 <button class="button" type="submit">Search</button>
             </form>
         </div>
-        <app-clues-grid [clues]="clues"></app-clues-grid>
+        <app-filter class="navbar-right" (changed)="filterChanged($event)"></app-filter>
+        <app-clues-grid [clues]="filteredClues"></app-clues-grid>
     </div>
 </div>
