@@ -1,33 +1,34 @@
 <div class="customers view indent">
-  <div class="container">
-      <header>
-          <h3>
-              <span class="glyphicon glyphicon-user"></span>
-              {{ title }}
-          </h3>
-      </header>
-      <br />
-      <div class="row">
-            <div class="col-sm">
-                Start Date:
-            </div>
-            <div class="col-sm">
-                <input #startDateInput [matDatepicker]="startDate" placeholder="Start Date">
-                <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
-                <mat-datepicker #startDate></mat-datepicker>
-            </div>
-            <div class="col-sm">
-                End Date:
-            </div>
-            <div class="col-sm">
-                <input #endDateInput [matDatepicker]="endDate" placeholder="End Date">
-                <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
-                <mat-datepicker #endDate></mat-datepicker>
-            </div>
-            <div class="col-sm">
-                <button (click)="getClues(startDateInput.value, endDateInput.value)">Search</button>
-            </div>
+    <div class="container">
+        <header>
+            <h3>
+                <span class="glyphicon glyphicon-user"></span>
+                {{ title }}
+            </h3>
+        </header>
+        <br />
+        <div class="row">
+            <form [formGroup]="dateSearchForm" (ngSubmit)="getClues(dateSearchForm.value)">
+                <div class="col-sm">
+                    Start Date:
+                </div>
+                <div class="col-sm">
+                    <input #startDateInput [matDatepicker]="startDate" placeholder="Start Date"
+                        formControlName="startDate">
+                    <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+                    <mat-datepicker #startDate></mat-datepicker>
+                </div>
+                <div class="col-sm">
+                    End Date:
+                </div>
+                <div class="col-sm">
+                    <input #endDateInput [matDatepicker]="endDate" placeholder="End Date" formControlName="endDate">
+                    <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
+                    <mat-datepicker #endDate></mat-datepicker>
+                </div>
+                <button class="button" type="submit">Search</button>
+            </form>
         </div>
-      <app-clues-grid [clues]="clues"></app-clues-grid>
-  </div>
+        <app-clues-grid [clues]="clues"></app-clues-grid>
+    </div>
 </div>

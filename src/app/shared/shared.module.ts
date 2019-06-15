@@ -4,9 +4,12 @@ import { MatDatepickerModule, MatNativeDateModule } from '@angular/material';
 
 import { FilterModule } from './filter/filter.module';
 import { PagingModule } from './paging/paging.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     CommonModule, 
     FilterModule, 
     PagingModule, 
@@ -14,6 +17,8 @@ import { PagingModule } from './paging/paging.module';
     MatNativeDateModule 
   ],
   exports: [
+    FormsModule,
+    ReactiveFormsModule,
     FilterModule, 
     PagingModule, 
     MatDatepickerModule, 

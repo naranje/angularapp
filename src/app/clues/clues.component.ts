@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 
 import { IClue } from '../shared/interfaces/iclue';
 import { DataService } from '../core/services/data.service';
@@ -11,21 +12,22 @@ import { DataService } from '../core/services/data.service';
 export class CluesComponent implements OnInit {
 
   title: String;
-  startDate: Date;
-  endDate: Date;
   clues: IClue[] = [];
-  constructor(private dataService: DataService) { }
+  dateSearchForm; 
+
+  constructor(private formBuilder: FormBuilder, private dataService: DataService) { 
+    this.dateSearchForm = this.formBuilder.group({
+      startDate: new Date(),
+      endDate: new Date
+    });
+  }
 
   ngOnInit() {
-    this.title = "Clues";
+    this.title = "Search For Clues Between Dates";
   }
   
-  getClues(startDate: string, endDate: string){
-    //TODO: Add input validation 
-    const minDate = new Date(startDate);
-    const maxDate = new Date(endDate);
-
-    this.dataService.getClues(minDate, maxDate).subscribe(
+  getClues(dateSearchFormData){
+    this.dataService.getClues(dateSearchFormData.startDate, dateSearchFormData.endDate).subscribe(
       (response: IClue[]) => {
         this.clues = response;
       },
