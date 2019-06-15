@@ -11,19 +11,20 @@ import { DataService } from '../core/services/data.service';
 export class CluesComponent implements OnInit {
 
   title: String;
+  startDate: Date;
+  endDate: Date;
   clues: IClue[] = [];
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
     this.title = "Clues";
-    this.getClues();
   }
   
-  getClues(){
-    //TODO: Get these from the form
-    let minDate = "2014-02-01";
-    let maxDate = "2014-02-03";
-    
+  getClues(startDate: string, endDate: string){
+    //TODO: Add input validation 
+    const minDate = new Date(startDate);
+    const maxDate = new Date(endDate);
+
     this.dataService.getClues(minDate, maxDate).subscribe(
       (response: IClue[]) => {
         this.clues = response;

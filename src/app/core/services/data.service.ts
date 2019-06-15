@@ -25,8 +25,8 @@ export class DataService {
       );
   }
 
-  getClues(minDate: string, maxDate: string) : Observable<IClue[]>{
-    return this.http.get<IClue[]>(`${this.cluesBaseUrl}?min_date="${minDate}"&max_date="${maxDate}"`)
+  getClues(minDate: Date, maxDate: Date) : Observable<IClue[]>{
+    return this.http.get<IClue[]>(`${this.cluesBaseUrl}?min_date="${minDate.toISOString()}"&max_date="${maxDate.toISOString()}"`)
     .pipe(
       map(clues => {return clues;}), catchError(this.handleError)
     ); 

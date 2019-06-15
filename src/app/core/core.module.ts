@@ -1,4 +1,5 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
@@ -9,8 +10,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FilterService } from './services/filter.service';
 
 @NgModule({
-  imports: [CommonModule, RouterModule, HttpClientModule],
-  exports: [RouterModule, HttpClientModule, NavbarComponent],
+  imports: [CommonModule, RouterModule, HttpClientModule, BrowserAnimationsModule],
+  exports: [RouterModule, HttpClientModule, NavbarComponent, BrowserAnimationsModule],
   providers: [DataService, FilterService],
   declarations: [NavbarComponent]
 })
