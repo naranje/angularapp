@@ -16,7 +16,7 @@ export class CategoriesComponent implements OnInit {
   categories: ICategory[] = [];
   filteredCategories: ICategory[] = [];
   totalRecords = 0;
-  pageSize = 15;
+  pageSize = 100;
 
   constructor(private dataService: DataService,
     private filterService: FilterService) { }
