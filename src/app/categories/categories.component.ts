@@ -31,9 +31,8 @@ export class CategoriesComponent implements OnInit {
 
   getCategoriesPage(page: number){
     this.dataService.getCategoriesPage(page, this.pageSize)
-    .subscribe((response: IPagedResults<ICategory[]>) => {
-      this.categories = this.filteredCategories = response.results;
-      this.totalRecords = response.totalRecords;
+    .subscribe((response: ICategory[]) => {
+      this.categories = this.filteredCategories = response;
     },(error: any) => {
       this.loggingService.logError(error);
     },

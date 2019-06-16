@@ -39,17 +39,11 @@ export class DataService {
     );
   }
 
-  getCategoriesPage(page: number, pageSize: number): Observable<IPagedResults<ICategory[]>> {
-    return this.http.get<ICategory[]>(`${this.categoriesBaseUrl}?count=${pageSize}&offset=${page*pageSize}`, {observe: 'response'})
+  getCategoriesPage(page: number, pageSize: number): Observable<ICategory[]> {
+    return this.http.get<ICategory[]>(`${this.categoriesBaseUrl}?count=${pageSize}&offset=${page*pageSize}`)
       .pipe(
         map(res => {
-          //TODO: Remove this
-          const totalRecords = +res.headers.get('X-InlineCount');
-          const categories = res.body as ICategory[];
-          return {
-            results: categories,
-            totalRecords: totalRecords
-          };
+          return res as ICategory[];
         }),
         catchError(this.handleError)
     );

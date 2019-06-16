@@ -28,7 +28,7 @@ export class RandomComponent implements OnInit {
       (err: any) => {
         this.loggingService.logError(err);
       }
-    )
+    );
   }
 
 }

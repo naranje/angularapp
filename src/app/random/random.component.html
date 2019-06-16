@@ -1,4 +1,4 @@
-<div class="customers view indent">
+<div>
   <div class="container">
       <header>
           <h3>
@@ -9,5 +9,6 @@
       <div *ngIf = "clue">
         <app-random-clue [clue]="clue"></app-random-clue>
       </div>
+      <button (click)="getRandomClue()">Get Random Clue</button>
   </div>
 </div>
