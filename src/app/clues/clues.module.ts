@@ -8,6 +8,7 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule, CluesRoutingModule, SharedModule  
   ],
+  exports: [CluesRoutingModule.components],
   declarations: [CluesRoutingModule.components]
 })
 export class CluesModule { }

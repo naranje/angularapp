@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 
 import { CategoryRoutingModule } from './category-routing.module';
 import { SharedModule } from '../shared/shared.module';
+import { CluesModule } from '../clues/clues.module';
 
 @NgModule({
   declarations: [CategoryRoutingModule.components],
   imports: [
     CommonModule,
     CategoryRoutingModule,
-    SharedModule
+    SharedModule,
+    CluesModule
   ]
 })
 export class CategoryModule { }

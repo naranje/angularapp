@@ -15,7 +15,6 @@ export class CluesComponent implements OnInit {
   title: String;
   clues: IClue[] = [];
   filteredClues: IClue[] = [];
-  
   dateSearchForm; 
 
   constructor(private formBuilder: FormBuilder, private dataService: DataService, private filterService: FilterService) { 
@@ -31,14 +30,14 @@ export class CluesComponent implements OnInit {
   
   getClues(dateSearchFormData){
     this.dataService.getClues(dateSearchFormData.startDate, dateSearchFormData.endDate).subscribe(
-      (response: IClue[]) => {
-        this.clues = this.filteredClues = response;
+      (clues: IClue[]) => {
+        this.clues = this.filteredClues = clues;
       },
       (err: any) => {
         //TODO: Add logging service 
         console.error(err);
       }
-    )
+    );
   }
 
   filterChanged(data: string){
