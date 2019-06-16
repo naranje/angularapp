@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { IClue } from '../shared/interfaces/iclue';
 import { DataService } from '../core/services/data.service';
+import { LoggingService } from '../core/services/logging.service';
 
 @Component({
   selector: 'app-random',
@@ -12,7 +13,7 @@ export class RandomComponent implements OnInit {
 
   title: String;
   clue: IClue;
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService, private loggingService: LoggingService) { }
 
   ngOnInit() {
     this.title = "Random Question";
@@ -25,8 +26,7 @@ export class RandomComponent implements OnInit {
         this.clue = response;
       },
       (err: any) => {
-        //TODO: Add logging service
-        console.error(err);
+        this.loggingService.logError(err);
       }
     )
   }

@@ -3,6 +3,7 @@ import { ICategory } from '../shared/interfaces/icategory';
 import { DataService } from '../core/services/data.service';
 import { FilterService } from '../core/services/filter.service';
 import { IPagedResults } from '../shared/interfaces/ipaged-results';
+import { LoggingService } from '../core/services/logging.service';
 
 @Component({
   selector: 'app-categories',
@@ -19,12 +20,12 @@ export class CategoriesComponent implements OnInit {
   pageSize = 100;
 
   constructor(private dataService: DataService,
-    private filterService: FilterService) { }
+    private filterService: FilterService,
+    private loggingService: LoggingService) { }
 
   ngOnInit() {
     this.title = "Categories"
     this.filterText = "Filter Categories:"
-
     this.getCategoriesPage(1);
   }
 
@@ -34,10 +35,9 @@ export class CategoriesComponent implements OnInit {
       this.categories = this.filteredCategories = response.results;
       this.totalRecords = response.totalRecords;
     },(error: any) => {
-      //TODO: Add logging service
-      console.error(error);
+      this.loggingService.logError(error);
     },
-    () => {console.log('Retrieved categories for page: ' + page);}
+    () => {this.loggingService.log('Retrieved categories for page: ' + page);}
     )
   }
 
@@ -46,7 +46,14 @@ export class CategoriesComponent implements OnInit {
   }
 
   filterChanged(data: string){
-
+    if (data && this.categories) {
+      data = data.toUpperCase();
+      const props = ['id', 'title'];
+      this.filteredCategories = this.filterService.filter<ICategory>(this.categories, data, props);
+    }
+    else {
+      this.filteredCategories = this.categories;
+    }
   }
 
 }

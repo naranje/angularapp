@@ -4,6 +4,7 @@ import { ICategory } from '../shared/interfaces/icategory';
 import { ActivatedRoute, Params } from '@angular/router';
 import { DataService } from '../core/services/data.service';
 import { FilterService } from '../core/services/filter.service';
+import { LoggingService } from '../core/services/logging.service';
 
 @Component({
   selector: 'app-category',
@@ -18,7 +19,8 @@ export class CategoryComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
     private dataService: DataService,
-    private filterService: FilterService) {
+    private filterService: FilterService, 
+    private loggingService: LoggingService) {
   }
 
   ngOnInit() {
@@ -35,8 +37,7 @@ export class CategoryComponent implements OnInit {
         this.title = `Clues for category: "${this.clues[0].category.title}"`
       },
       (err: any) => {
-        //TODO: Add logging service 
-        console.error(err);
+        this.loggingService.logError(err)
       }
     );
   }

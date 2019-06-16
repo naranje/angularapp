@@ -4,6 +4,7 @@ import { FormBuilder } from '@angular/forms';
 import { IClue } from '../shared/interfaces/iclue';
 import { DataService } from '../core/services/data.service';
 import { FilterService } from '../core/services/filter.service';
+import { LoggingService } from '../core/services/logging.service';
 
 @Component({
   selector: 'app-clues',
@@ -17,7 +18,11 @@ export class CluesComponent implements OnInit {
   filteredClues: IClue[] = [];
   dateSearchForm; 
 
-  constructor(private formBuilder: FormBuilder, private dataService: DataService, private filterService: FilterService) { 
+  constructor(
+    private formBuilder: FormBuilder, 
+    private dataService: DataService, 
+    private filterService: FilterService,
+    private loggingService: LoggingService) { 
     this.dateSearchForm = this.formBuilder.group({
       startDate: new Date(),
       endDate: new Date
@@ -34,8 +39,7 @@ export class CluesComponent implements OnInit {
         this.clues = this.filteredClues = clues;
       },
       (err: any) => {
-        //TODO: Add logging service 
-        console.error(err);
+        this.loggingService.logError(err);
       }
     );
   }

@@ -10,7 +10,7 @@
         
         <app-paging
             (pageChanged)="pageChanged($event)"></app-paging>     
-            
+        <app-filter class="navbar-right" (changed)="filterChanged($event)"></app-filter>
         <app-categories-grid 
           [categories]="filteredCategories"></app-categories-grid>
     
