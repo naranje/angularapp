@@ -5,7 +5,6 @@ import { map, catchError } from 'rxjs/operators';
 
 import { ICustomer } from '../../shared/interfaces/icustomer';
 import { IClue } from '../../shared/interfaces/iclue';
-import { IPagedResults } from 'src/app/shared/interfaces/ipaged-results';
 import { ICategory } from 'src/app/shared/interfaces/icategory';
 
 @Injectable()
