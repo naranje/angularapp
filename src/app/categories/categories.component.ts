@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ICategory } from '../shared/interfaces/icategory';
 import { DataService } from '../core/services/data.service';
 import { FilterService } from '../core/services/filter.service';
-import { IPagedResults } from '../shared/interfaces/ipaged-results';
 import { LoggingService } from '../core/services/logging.service';
 
 @Component({

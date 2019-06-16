@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CluesComponent } from './clues.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 
 describe('CluesComponent', () => {
   let component: CluesComponent;
@@ -8,7 +10,11 @@ describe('CluesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CluesComponent ]
+      declarations: [ CluesComponent ],
+      providers: [
+        FormBuilder
+      ],
+      schemas: [ NO_ERRORS_SCHEMA ]
     })
     .compileComponents();
   }));

@@ -1,6 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CategoriesGridComponent } from './categories-grid.component';
+import { Directive, Input, HostListener } from '@angular/core';
+
+@Directive({
+  selector: '[routerLink]'
+})
+export class RouterLinkDirectiveStub {
+  @Input('routerLink') linkParams: any;
+  navigatedTo: any = null;
+
+  @HostListener('click')
+  onClick() {
+    this.navigatedTo = this.linkParams;
+  }
+}
 
 describe('CategoriesGridComponent', () => {
   let component: CategoriesGridComponent;
@@ -8,7 +22,7 @@ describe('CategoriesGridComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CategoriesGridComponent ]
+      declarations: [ CategoriesGridComponent, RouterLinkDirectiveStub ]
     })
     .compileComponents();
   }));
