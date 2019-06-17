@@ -1,14 +1,9 @@
-<div>
-  <div class="container">
-      <header>
-          <h3>
-              {{ title }}
-          </h3>
-      </header>
-      <br />
+<br />
+<div class="jumbotron">
       <div *ngIf = "clue">
         <app-random-clue [clue]="clue"></app-random-clue>
       </div>
-      <button (click)="getRandomClue()">Get Random Clue</button>
-  </div>
+      <p class="lead">
+          <button class="btn btn-primary btn-lg" (click)="getRandomClue()">Get Random Clue</button>
+      </p>
 </div>
