@@ -2,6 +2,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RandomClueComponent } from './random-clue.component';
 import { IClue } from 'src/app/shared/interfaces/iclue';
+import { DebugElement } from '@angular/core';
+import { By } from '@angular/platform-browser';
 
 describe('RandomClueComponent', () => {
   let component: RandomClueComponent;
@@ -41,7 +43,35 @@ describe('RandomClueComponent', () => {
   });
 
   it('should create', () => {
-    
     expect(component).toBeTruthy();
   });
+
+  it('should display answer', () => {
+    const de: DebugElement = fixture.debugElement;
+    const tableDe = de.query(By.css('table'));
+    const table: HTMLElement = tableDe.nativeElement;
+    expect(table.textContent).toContain("raise");
+  });
+
+  it('should display question', () => {
+    const de: DebugElement = fixture.debugElement;
+    const tableDe = de.query(By.css('table'));
+    const table: HTMLElement = tableDe.nativeElement;
+    expect(table.textContent).toContain("An increase in wages");
+  });
+
+  it('should display value', () => {
+    const de: DebugElement = fixture.debugElement;
+    const tableDe = de.query(By.css('table'));
+    const table: HTMLElement = tableDe.nativeElement;
+    expect(table.textContent).toContain("200");
+  });
+
+  it('should display category title', () => {
+    const de: DebugElement = fixture.debugElement;
+    const tableDe = de.query(By.css('table'));
+    const table: HTMLElement = tableDe.nativeElement;
+    expect(table.textContent).toContain("poker words");
+  });
+
 });
