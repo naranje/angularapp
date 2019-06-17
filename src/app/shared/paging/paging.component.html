@@ -1,14 +1,12 @@
-<nav [hidden]="!isVisible">
-  <ul class="pagination">
-    <li [class.disabled]="!previousEnabled" (click)="previousNext(-1, $event)">
-      <a aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
-      </a>
-    </li>
-    <li (click)="previousNext(1, $event)">
-      <a aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-      </a>
-    </li>
-  </ul>
-</nav>
+<ul class="pager">
+  <li [class.disabled]="!previousEnabled" (click)="previousNext(-1, $event)">
+    <a aria-label="Previous" class="page-link">
+      <span aria-hidden="true">Previous Page</span>
+    </a>
+  </li>
+  <li (click)="previousNext(1, $event)">
+    <a aria-label="Next" class="page-link">
+      <span aria-hidden="true">Next Page</span>
+    </a>
+  </li>
+</ul>

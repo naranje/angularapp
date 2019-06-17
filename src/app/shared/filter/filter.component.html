@@ -1,6 +1,6 @@
-<form>
-    Filter:
-    <input type="text" name="filter"
-        [(ngModel)]="model.filter" 
-        (keyup)="filterChanged($event)"  />
+<form class="navbar-form navbar-right">
+    <div class="form-group">
+        <input type="text" class="form-control" name="filter" [(ngModel)]="model.filter" (keyup)="filterChanged($event)"
+            placeholder="Filter" />
+    </div>
 </form>
