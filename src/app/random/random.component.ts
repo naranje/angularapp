@@ -10,7 +10,6 @@ import { LoggingService } from '../core/services/logging.service';
   styleUrls: ['./random.component.css']
 })
 export class RandomComponent implements OnInit {
-
   title: String;
   clue: IClue;
   constructor(private dataService: DataService, private loggingService: LoggingService) { }
