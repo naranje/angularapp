@@ -7,7 +7,7 @@ const routes: Routes = [
   {path: 'categories', loadChildren: './categories/categories.module#CategoriesModule' },
   {path: 'category/:id', loadChildren: './category/category.module#CategoryModule' },
   {path: 'clues', loadChildren: './clues/clues.module#CluesModule' },
-  {path: '**', pathMatch: 'full', redirectTo: '/random'} //catch all unfound routes and redirect to home page
+  {path: '**', pathMatch: 'full', redirectTo: '/random'} // catch all unfound routes and redirect to home page
 ];
 
 @NgModule({

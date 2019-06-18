@@ -11,7 +11,7 @@ import { By } from '@angular/platform-browser';
 describe('CluesComponent', () => {
   let component: CluesComponent;
   let fixture: ComponentFixture<CluesComponent>;
-  
+
   const expectedClues: IClue[] = [
     {
       id: 115687,
@@ -58,18 +58,18 @@ describe('CluesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CluesComponent ],
+      declarations: [CluesComponent],
       providers: [
         FormBuilder,
-        {provide: DataService, useValue: dataServiceSpy}
+        { provide: DataService, useValue: dataServiceSpy }
       ],
-      schemas: [ NO_ERRORS_SCHEMA ]
+      schemas: [NO_ERRORS_SCHEMA]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
-   
+
     fixture = TestBed.createComponent(CluesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -87,7 +87,7 @@ describe('CluesComponent', () => {
   });
 
   it('should retrieve the clues for dates', () => {
-    component.getClues({startDate: new Date("2013-07-11T12:00:00.000Z"), endDate: new Date("2013-07-11T12:00:00.000Z")})
+    component.getClues({ startDate: new Date("2013-07-11T12:00:00.000Z"), endDate: new Date("2013-07-11T12:00:00.000Z") });
     expect(component.clues[0].answer).toEqual("raise");
     expect(component.filteredClues[0].answer).toEqual("raise");
     expect(component.clues.length).toEqual(2);
@@ -95,8 +95,8 @@ describe('CluesComponent', () => {
   });
 
   it('should filter clues', () => {
-    component.getClues({startDate: new Date("2013-07-11T12:00:00.000Z"), endDate: new Date("2013-07-11T12:00:00.000Z")})
-    component.filterChanged("flush")
+    component.getClues({ startDate: new Date("2013-07-11T12:00:00.000Z"), endDate: new Date("2013-07-11T12:00:00.000Z") });
+    component.filterChanged("flush");
     expect(component.clues[0].answer).toEqual("raise");
     expect(component.filteredClues[0].answer).toEqual("flush");
     expect(component.clues.length).toEqual(2);

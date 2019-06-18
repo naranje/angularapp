@@ -73,14 +73,14 @@ describe('FilterService', () => {
 
   it('should filter by property', () => {
     const service: FilterService = TestBed.get(FilterService);
-    let filter = service.filter(itemsToFilter, "MANDELA", ["answer"]);
+    const filter = service.filter(itemsToFilter, "MANDELA", ["answer"]);
     expect(filter.length).toBe(1);
     expect(filter[0].question).toContain("apartheid");
   });
 
   it('should filter using a property in a nested object', () => {
     const service: FilterService = TestBed.get(FilterService);
-    let filter = service.filter(itemsToFilter, "POKER", ["category.title"]);
+    const filter = service.filter(itemsToFilter, "POKER", ["category.title"]);
     expect(filter.length).toBe(1);
     expect(filter[0].category.title).toEqual("poker words");
   });

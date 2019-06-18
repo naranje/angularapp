@@ -10,7 +10,7 @@ import { IClue } from '../../shared/interfaces/iclue';
 export class CluesGridComponent implements OnInit {
 
   @Input() clues: IClue[] = [];
-  
+
   constructor() { }
 
   ngOnInit() {

@@ -19,7 +19,7 @@ export class RandomComponent implements OnInit {
     this.getRandomClue();
   }
 
-  getRandomClue(){
+  getRandomClue() {
     this.dataService.getRandomClue().subscribe(
       (response: IClue) => {
         this.clue = response;
