@@ -79,7 +79,7 @@ describe('CategoryComponent', () => {
 
   it('should show title', () => {
     const de: DebugElement = fixture.debugElement;
-    const headerDe = de.query(By.css('h3'));
+    const headerDe = de.query(By.css('h4'));
     const header: HTMLElement = headerDe.nativeElement;
     expect(header.textContent.trimLeft().trimRight()).toEqual(component.title);
     expect(component.title).toContain(component.clues[0].category.title);
