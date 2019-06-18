@@ -1,21 +1,23 @@
-# AthU
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# Athabasca University Assessment
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run `npm install` and `ng build` to build the project.
+
+## Run on dev server
+
+Run `ng serve` to run the app on a dev server. Navigate to `http://localhost:4200/`. 
 
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Answers To Questions
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+1.	How long did you spend on assessment? What would you add to your solution if you had more time? If you didn't spend much time on the coding test then use this as an opportunity to explain what you would add.
 
-## Further help
+2.	What part of the application are you most proud of. Please include a snippet of the code in the answer. 
 
-To get more help 
+3.	How would you improve the APIs that you just used?
+
+4.	Please describe yourself using JSON.

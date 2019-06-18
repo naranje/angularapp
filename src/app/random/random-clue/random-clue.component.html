@@ -1,3 +1,6 @@
-<h2 class="display-4"><strong>Category:</strong> {{clue.category.title}}</h2>
-<p><strong>Question:</strong> {{clue.question}}</p>
-<p><strong>Answer:</strong> {{clue.answer}}</p>
+<h2 class="display-3"><strong>Category:</strong> {{clue.category.title}}</h2>
+<p>&nbsp;</p>
+<p id="question"><strong>Question:</strong> {{clue.question}}</p>
+<p id="answer"><strong>Answer:</strong> {{clue.answer}}</p>
+<p id="value"><strong>Value:</strong> {{clue.value | currency  : 'USD' : 'symbol' : '1.0'}}</p>
+<p>&nbsp;</p>

@@ -57,13 +57,6 @@ describe('CategoriesComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should show title', () => {
-    const de: DebugElement = fixture.debugElement;
-    const headerDe = de.query(By.css('h3'));
-    const header: HTMLElement = headerDe.nativeElement;
-    expect(header.textContent.trimLeft().trimRight()).toEqual(component.title);
-  });
-
   it('should retrieve categories for page', () => {
     expect(component.categories[0].title).toEqual("everything from c to d");
     expect(component.filteredCategories[0].title).toEqual("everything from c to d");

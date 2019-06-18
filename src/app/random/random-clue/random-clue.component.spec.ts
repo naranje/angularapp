@@ -48,28 +48,28 @@ describe('RandomClueComponent', () => {
 
   it('should display answer', () => {
     const de: DebugElement = fixture.debugElement;
-    const tableDe = de.query(By.css('table'));
+    const tableDe = de.query(By.css('#answer'));
     const table: HTMLElement = tableDe.nativeElement;
     expect(table.textContent).toContain("raise");
   });
 
   it('should display question', () => {
     const de: DebugElement = fixture.debugElement;
-    const tableDe = de.query(By.css('table'));
+    const tableDe = de.query(By.css('#question'));
     const table: HTMLElement = tableDe.nativeElement;
     expect(table.textContent).toContain("An increase in wages");
   });
 
   it('should display value', () => {
     const de: DebugElement = fixture.debugElement;
-    const tableDe = de.query(By.css('table'));
+    const tableDe = de.query(By.css('#value'));
     const table: HTMLElement = tableDe.nativeElement;
     expect(table.textContent).toContain("200");
   });
 
   it('should display category title', () => {
     const de: DebugElement = fixture.debugElement;
-    const tableDe = de.query(By.css('table'));
+    const tableDe = de.query(By.css('h2'));
     const table: HTMLElement = tableDe.nativeElement;
     expect(table.textContent).toContain("poker words");
   });

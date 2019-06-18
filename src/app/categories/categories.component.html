@@ -1,12 +1,11 @@
-<div>
-    <div class="container">
-        <h2 class="sub-header">
-            {{ title }}
-        </h2>
-        <div class="panel panel-default">
-            <div class="panel-heading"><app-paging (pageChanged)="pageChanged($event)"></app-paging></div>
-            <div class="panel-body"><app-filter (changed)="filterChanged($event)"></app-filter></div>
-            <app-categories-grid [categories]="filteredCategories"></app-categories-grid>
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <app-paging (pageChanged)="pageChanged($event)"></app-paging>
         </div>
+        <div class="panel-body">
+            <app-filter (changed)="filterChanged($event)"></app-filter>
+        </div>
+        <app-categories-grid [categories]="filteredCategories"></app-categories-grid>
     </div>
 </div>

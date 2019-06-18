@@ -1,11 +1,10 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RandomComponent } from './random.component';
 import { NO_ERRORS_SCHEMA, DebugElement } from '@angular/core';
 import { IClue } from '../shared/interfaces/iclue';
 import { of } from 'rxjs';
 import { DataService } from '../core/services/data.service';
-import { By } from '@angular/platform-browser';
 
 describe('RandomComponent', () => {
   let component: RandomComponent;
@@ -47,13 +46,6 @@ describe('RandomComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
-
-  it('should show title', () => {
-    const de: DebugElement = fixture.debugElement;
-    const headerDe = de.query(By.css('h3'));
-    const header: HTMLElement = headerDe.nativeElement;
-    expect(header.textContent.trimLeft().trimRight()).toEqual(component.title);
   });
 
   it('should retrieve a random clue', () => {

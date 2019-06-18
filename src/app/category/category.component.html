@@ -1,12 +1,13 @@
-<div>
-  <div class="container">
-      <header>
-          <h3>
-              {{ title }}
-          </h3>
-      </header>
-      <br />
-      <app-filter class="navbar-right" (changed)="filterChanged($event)"></app-filter>
-      <app-clues-grid [clues]="filteredClues"></app-clues-grid>
-  </div>
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4>
+                {{ title }}
+            </h4>
+        </div>
+        <div class="panel-body">
+            <app-filter (changed)="filterChanged($event)"></app-filter>
+        </div>
+        <app-clues-grid [clues]="filteredClues"></app-clues-grid>
+    </div>
 </div>
