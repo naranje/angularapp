@@ -21,7 +21,7 @@ import { FilterService } from './services/filter.service';
  */
 export class CoreModule extends EnsureModuleLoadedOnceGuard{
   
-  //Looks for the module in the parent injector to see if it's already been loaded
+  // Looks for the module in the parent injector to see if it's already been loaded
   constructor(@Optional() @SkipSelf() parentModule: CoreModule){
     super(parentModule);
   }

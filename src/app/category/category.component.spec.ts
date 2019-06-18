@@ -60,9 +60,11 @@ describe('CategoryComponent', () => {
     TestBed.configureTestingModule({
       declarations: [CategoryComponent],
       providers: [
-        { provide: ActivatedRoute, useValue: {
-          params: of({ id: '15784' })
-        } },
+        {
+          provide: ActivatedRoute, useValue: {
+            params: of({ id: '15784' })
+          }
+        },
         { provide: DataService, useValue: dataServiceSpy }
       ],
       schemas: [NO_ERRORS_SCHEMA]
@@ -93,7 +95,7 @@ describe('CategoryComponent', () => {
   });
 
   it('should filter clues', () => {
-    component.filterChanged("flush")
+    component.filterChanged("flush");
     expect(component.clues[0].answer).toEqual("raise");
     expect(component.filteredClues[0].answer).toEqual("flush");
     expect(component.clues.length).toEqual(2);

@@ -10,7 +10,7 @@ import { ICategory } from 'src/app/shared/interfaces/icategory';
 export class CategoriesGridComponent implements OnInit {
 
   @Input() categories: ICategory[] = [];
-   
+  
   constructor() { }
 
   ngOnInit() {

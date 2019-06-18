@@ -10,7 +10,7 @@ describe('DataService', () => {
 
   beforeEach(() => {
     httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
-    dataService = new DataService(<any> httpClientSpy);
+    dataService = new DataService(<any>httpClientSpy);
   });
 
   it('should return a random clue', () => {
@@ -26,13 +26,13 @@ describe('DataService', () => {
       game_id: null,
       invalid_count: null,
       category: {
-          id: 15784,
-          title: "poker words",
-          created_at: new Date("2014-02-14T02:45:17.772Z"),
-          updated_at: new Date("2014-02-14T02:45:17.772Z"),
-          clues_count: 10
+        id: 15784,
+        title: "poker words",
+        created_at: new Date("2014-02-14T02:45:17.772Z"),
+        updated_at: new Date("2014-02-14T02:45:17.772Z"),
+        clues_count: 10
       }
-    }
+    };
 
     httpClientSpy.get.and.returnValue(of([expectedClue]));
 

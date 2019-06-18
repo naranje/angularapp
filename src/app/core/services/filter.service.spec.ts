@@ -4,7 +4,7 @@ import { FilterService } from './filter.service';
 import { IClue } from 'src/app/shared/interfaces/iclue';
 
 describe('FilterService', () => {
-  const itemsToFilter : IClue[] = [
+  const itemsToFilter: IClue[] = [
     {
       id: 115687,
       answer: "raise",
@@ -17,52 +17,52 @@ describe('FilterService', () => {
       game_id: null,
       invalid_count: null,
       category: {
-          id: 15784,
-          title: "poker words",
-          created_at: new Date("2014-02-14T02:45:17.772Z"),
-          updated_at: new Date("2014-02-14T02:45:17.772Z"),
-          clues_count: 10
-        }
+        id: 15784,
+        title: "poker words",
+        created_at: new Date("2014-02-14T02:45:17.772Z"),
+        updated_at: new Date("2014-02-14T02:45:17.772Z"),
+        clues_count: 10
+      }
     },
     {
-        id: 86092,
-        answer: "(Nelson) Mandela",
-        question: "F.W. De Klerk & this man went halfsies on the 1993 Peace Prize for the peaceful termination of apartheid",
-        value: 800,
-        airdate: new Date("2008-03-19T12:00:00.000Z"),
-        created_at: new Date("2014-02-11T23:43:37.343Z"),
-        updated_at: new Date("2014-02-11T23:43:37.343Z"),
-        category_id: 11286,
-        game_id: null,
-        invalid_count: null,
-        category: {
-            id: 11286,
-            title: "the nobel peace prize",
-            created_at: new Date("2014-02-11T23:43:36.714Z"),
-            updated_at: new Date("2014-02-11T23:43:36.714Z"),
-            clues_count: 15
-        }
+      id: 86092,
+      answer: "(Nelson) Mandela",
+      question: "F.W. De Klerk & this man went halfsies on the 1993 Peace Prize for the peaceful termination of apartheid",
+      value: 800,
+      airdate: new Date("2008-03-19T12:00:00.000Z"),
+      created_at: new Date("2014-02-11T23:43:37.343Z"),
+      updated_at: new Date("2014-02-11T23:43:37.343Z"),
+      category_id: 11286,
+      game_id: null,
+      invalid_count: null,
+      category: {
+        id: 11286,
+        title: "the nobel peace prize",
+        created_at: new Date("2014-02-11T23:43:36.714Z"),
+        updated_at: new Date("2014-02-11T23:43:36.714Z"),
+        clues_count: 15
+      }
     },
     {
-        id: 114189,
-        answer: "(Martin Luther) King (Jr.)",
-        question: "In his acceptance speech, Pres. Obama quoted this 1964 American recipient saying, \"violence never brings permanent peace\"",
-        value: 200,
-        airdate: new Date("2011-11-03T12:00:00.000Z"),
-        created_at: new Date("2014-02-14T02:43:57.490Z"),
-        updated_at: new Date("2014-02-14T02:43:57.490Z"),
-        category_id: 11286,
-        game_id: null,
-        invalid_count: null,
-        category: {
-            id: 11286,
-            title: "the nobel peace prize",
-            created_at: new Date("2014-02-11T23:43:36.714Z"),
-            updated_at: new Date("2014-02-11T23:43:36.714Z"),
-            clues_count: 15
-        }
+      id: 114189,
+      answer: "(Martin Luther) King (Jr.)",
+      question: "In his acceptance speech, Pres. Obama quoted this 1964 American recipient saying, \"violence never brings permanent peace\"",
+      value: 200,
+      airdate: new Date("2011-11-03T12:00:00.000Z"),
+      created_at: new Date("2014-02-14T02:43:57.490Z"),
+      updated_at: new Date("2014-02-14T02:43:57.490Z"),
+      category_id: 11286,
+      game_id: null,
+      invalid_count: null,
+      category: {
+        id: 11286,
+        title: "the nobel peace prize",
+        created_at: new Date("2014-02-11T23:43:36.714Z"),
+        updated_at: new Date("2014-02-11T23:43:36.714Z"),
+        clues_count: 15
+      }
     },
-];
+  ];
 
   beforeEach(() => TestBed.configureTestingModule({}));
 

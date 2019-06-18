@@ -10,19 +10,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   imports: [
     FormsModule,
     ReactiveFormsModule,
-    CommonModule, 
-    FilterModule, 
-    PagingModule, 
-    MatDatepickerModule, 
-    MatNativeDateModule 
+    CommonModule,
+    FilterModule,
+    PagingModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   exports: [
     FormsModule,
     ReactiveFormsModule,
-    FilterModule, 
-    PagingModule, 
-    MatDatepickerModule, 
-    MatNativeDateModule ]
+    FilterModule,
+    PagingModule,
+    MatDatepickerModule,
+    MatNativeDateModule]
 })
 /**
  *SharedModule is a conventional name for an NgModule with the components, directives, and pipes that you use everywhere in your app. 

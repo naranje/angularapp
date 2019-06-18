@@ -23,27 +23,27 @@ export class CategoriesComponent implements OnInit {
     private loggingService: LoggingService) { }
 
   ngOnInit() {
-    this.title = "Categories"
-    this.filterText = "Filter Categories:"
+    this.title = "Categories";
+    this.filterText = "Filter Categories:";
     this.getCategoriesPage(1);
   }
 
-  getCategoriesPage(page: number){
+  getCategoriesPage(page: number) {
     this.dataService.getCategoriesPage(page, this.pageSize)
-    .subscribe((response: ICategory[]) => {
-      this.categories = this.filteredCategories = response;
-    },(error: any) => {
-      this.loggingService.logError(error);
-    },
-    () => {this.loggingService.log('Retrieved categories for page: ' + page);}
-    )
+      .subscribe((response: ICategory[]) => {
+        this.categories = this.filteredCategories = response;
+      }, (error: any) => {
+        this.loggingService.logError(error);
+      },
+        () => { this.loggingService.log('Retrieved categories for page: ' + page); }
+      );
   }
 
-  pageChanged(page: number){
+  pageChanged(page: number) {
     this.getCategoriesPage(page);
   }
 
-  filterChanged(data: string){
+  filterChanged(data: string) {
     if (data && this.categories) {
       data = data.toUpperCase();
       const props = ['id', 'title'];

@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { CategoryComponent } from './category.component';
 
 const routes: Routes = [
-  {path:'', component:CategoryComponent}
+  { path: '', component: CategoryComponent }
 ];
 
 @NgModule({
@@ -11,5 +11,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class CategoryRoutingModule {
-  static components = [CategoryComponent]
+  static components = [CategoryComponent];
 }

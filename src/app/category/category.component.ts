@@ -19,7 +19,7 @@ export class CategoryComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
     private dataService: DataService,
-    private filterService: FilterService, 
+    private filterService: FilterService,
     private loggingService: LoggingService) {
   }
 
@@ -34,10 +34,10 @@ export class CategoryComponent implements OnInit {
     this.dataService.getCategoryClues(categoryId).subscribe(
       (clues: IClue[]) => {
         this.clues = this.filteredClues = clues;
-        this.title = `Clues for category: "${this.clues[0].category.title}"`
+        this.title = `Clues for category: "${this.clues[0].category.title}"`;
       },
       (err: any) => {
-        this.loggingService.logError(err)
+        this.loggingService.logError(err);
       }
     );
   }

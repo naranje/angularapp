@@ -8,10 +8,10 @@ import { AppComponent } from './app.component';
 @NgModule({
 
   imports: [
-    //BrowserModule is imported in the CoreModule through the BrowserAnimationsModule
+    // BrowserModule is imported in the CoreModule through the BrowserAnimationsModule
     AppRoutingModule,
-    CoreModule, //Singleton objects (services, components that are loaded only once)
-    SharedModule //Shared objects (loaded multiple times)
+    CoreModule, // Singleton objects (services, components that are loaded only once)
+    SharedModule // Shared objects (loaded multiple times)
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent]

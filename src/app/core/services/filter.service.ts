@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class FilterService {
-  
+
   constructor() { }
 
   /**
@@ -18,7 +18,7 @@ export class FilterService {
     return items.filter((item: T) => {
       let match = false;
       for (const prop of props) {
-        //Check for nested properties (such as category.title)
+        // Check for nested properties (such as category.title)
         if (prop.indexOf('.') > -1) {
           const value = this.resolve(prop, item);
           if (value && value.toUpperCase().indexOf(data) > -1) {
@@ -44,7 +44,7 @@ export class FilterService {
    */
   resolve(path: string, obj: any) {
     return path.split('.').reduce((prev, curr) => {
-        return (prev ? prev[curr] : undefined);
+      return (prev ? prev[curr] : undefined);
     }, obj || self);
   }
 

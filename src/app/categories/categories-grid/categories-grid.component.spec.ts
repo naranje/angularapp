@@ -6,7 +6,7 @@ import { ICategory } from 'src/app/shared/interfaces/icategory';
 import { By } from '@angular/platform-browser';
 
 @Directive({
-  selector: '[routerLink]'
+  selector: '[routerLink]' 
 })
 export class RouterLinkDirectiveStub {
   @Input('routerLink') linkParams: any;
@@ -22,7 +22,7 @@ describe('CategoriesGridComponent', () => {
   let component: CategoriesGridComponent;
   let fixture: ComponentFixture<CategoriesGridComponent>;
   let linkDes: DebugElement[];
-  let routerLinks: RouterLinkDirectiveStub[]
+  let routerLinks: RouterLinkDirectiveStub[];
 
   const categories: ICategory[] = [{
     id: 11302,
@@ -90,7 +90,6 @@ describe('CategoriesGridComponent', () => {
 
     categoryLinkDe.triggerEventHandler('click', null);
     fixture.detectChanges();
-  
     expect(categoryLink.navigatedTo).toEqual(['/category', 11302]);
   });
 });

@@ -13,27 +13,27 @@ import { LoggingService } from '../core/services/logging.service';
 })
 export class CluesComponent implements OnInit {
 
-  title: String;
+  title: string;
   clues: IClue[] = [];
   filteredClues: IClue[] = [];
-  dateSearchForm; 
+  dateSearchForm;
 
   constructor(
-    private formBuilder: FormBuilder, 
-    private dataService: DataService, 
+    private formBuilder: FormBuilder,
+    private dataService: DataService,
     private filterService: FilterService,
-    private loggingService: LoggingService) { 
+    private loggingService: LoggingService) {
     this.dateSearchForm = this.formBuilder.group({
       startDate: new Date(),
-      endDate: new Date
+      endDate: new Date()
     });
   }
 
   ngOnInit() {
     this.title = "Search For Clues Between Dates";
   }
-  
-  getClues(dateSearchFormData){
+
+  getClues(dateSearchFormData) {
     this.dataService.getClues(dateSearchFormData.startDate, dateSearchFormData.endDate).subscribe(
       (clues: IClue[]) => {
         this.clues = this.filteredClues = clues;
@@ -44,13 +44,13 @@ export class CluesComponent implements OnInit {
     );
   }
 
-  filterChanged(data: string){
-    if(data && this.clues){
+  filterChanged(data: string) {
+    if (data && this.clues) {
       data = data.toUpperCase();
       const props = ['id', 'answer', 'question', 'category.title'];
       this.filteredClues = this.filterService.filter<IClue>(this.clues, data, props);
     }
-    else{
+    else {
       this.filteredClues = this.clues;
     }
   }

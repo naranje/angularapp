@@ -20,19 +20,19 @@ describe('RandomClueComponent', () => {
     game_id: null,
     invalid_count: null,
     category: {
-        id: 15784,
-        title: "poker words",
-        created_at: new Date("2014-02-14T02:45:17.772Z"),
-        updated_at: new Date("2014-02-14T02:45:17.772Z"),
-        clues_count: 10
+      id: 15784,
+      title: "poker words",
+      created_at: new Date("2014-02-14T02:45:17.772Z"),
+      updated_at: new Date("2014-02-14T02:45:17.772Z"),
+      clues_count: 10
     }
-  }
+  };
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RandomClueComponent ]
+      declarations: [RandomClueComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

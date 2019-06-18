@@ -13,6 +13,6 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class CategoriesRoutingModule { 
+export class CategoriesRoutingModule {
   static components = [ CategoriesComponent, CategoriesGridComponent ];
 }
