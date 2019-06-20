@@ -1,5 +1,7 @@
 # Angular
 
+An Angular app that consumes the http://jservice.io/ API.   
+
 This project was built using Angular CLI 8.0+ which requires Node.js `v10.9` or greater.  I built and tested it on a laptop running node `v10.16.0 LTS`, with Angular CLI installed globally.  I also deployed and tested it on a separate machine running node `v12.4.0` without a global Angular CLI installation.
 
 ## Build
